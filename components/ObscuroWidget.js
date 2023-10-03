@@ -281,7 +281,7 @@ async function connectAccount() {
                     const result = await revokeUserID(userID);
                     if (result) {
                         if (statusRef.current) {
-                            statusRef.current.innerText = "Revoking UserID successful. Please remove current network from Metamask.";
+                            statusRef.current.innerText = "Revoking UserID successful. Please remove current network from Metamask & join again.";
                         }
                     } else {
                         if (statusRef.current) {
