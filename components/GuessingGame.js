@@ -117,7 +117,7 @@ function GuessingGame({ guessContractAddress, erc20ContractAddress }) {
           <li>Click on the Obscuro Widget in the bottom right corner.</li>
           <li>Click Join Obscuro</li>
           <li>Add Account</li>
-          <li>You'll need some OGG tokens to play the game, so head to our Discord Server & the faucet channel & request some tokens.</li>
+          <li>You'll need some ETH tokens to play the game, so head to our Discord Server & the faucet channel & request some tokens.</li>
           <li>Now you can approve the guesses & make your guess.</li>
         </ol>
       </div>

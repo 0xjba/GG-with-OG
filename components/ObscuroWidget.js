@@ -10,7 +10,7 @@ const ObscuroWidget = () => {
     const pathAuthenticate = obscuroGatewayVersion + "/authenticate/";
     const pathQuery = obscuroGatewayVersion + "/query/";
     const pathRevoke = obscuroGatewayVersion + "/revoke/";
-    const obscuroChainIDDecimal = 777;
+    const obscuroChainIDDecimal = 443;
     const methodPost = "post";
     const methodGet = "get";
     const jsonHeaders = {
@@ -50,21 +50,29 @@ async function addNetworkToMetaMask(ethereum, userID, chainIDDecimal) {
                 {
                     chainId: chainIdHex,
                     chainName: 'Obscuro Testnet',
+                    iconUrls: ["https://raw.githubusercontent.com/obscuronet/go-obscuro/main/tools/walletextension/api/staticOG/Metamask%20Network%20Icon.png"],
                     nativeCurrency: {
                         name: 'Obscuro',
-                        symbol: 'OBX',
+                        symbol: 'ETH',
                         decimals: 18
                     },
                     rpcUrls: [obscuroGatewayAddress+"/"+obscuroGatewayVersion+'/?u='+userID],
-                    blockExplorerUrls: null
+                    blockExplorerUrls: ["https://testnet.obscuroscan.io/"],
                 },
             ],
         });
+
+        // Add event listener for chainChanged after successfully adding the network
+        ethereum.on('chainChanged', () => {
+            // Reload the page when the chain changes
+            window.location.reload();
+        });
+
     } catch (error) {
         console.error(error);
-        return false
+        return false;
     }
-    return true
+    return true;
 }
 
 async function authenticateAccountWithObscuroGateway(ethereum, account, userID) {
@@ -271,7 +279,6 @@ async function connectAccount() {
                     }
                     await populateAccountsTable(userID);
                 }}
-                disabled  // The button is disabled until Add Account works!
                 >
                     Add All Accounts
                 </button>
