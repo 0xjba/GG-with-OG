@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <div>
       <ObscuroWidget />
-      <GuessingGame guessContractAddress="0x66aAb95769cDfF0DCA20a5b976309C3F69811893" erc20ContractAddress="0xfC902592A229CdaE83fb3F1CA9A9a8eb802B30FC" />
+      <GuessingGame guessContractAddress="0x0020407a683d8AA20A22F2230cFa0D8057F3FDf4" erc20ContractAddress="0x1eAbD4aaDb9FD704D5413DA38F36AaCFa92f5FFA" />
     </div>
   );
 }
